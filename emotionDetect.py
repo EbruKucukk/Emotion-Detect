@@ -13,14 +13,17 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import cross_val_score  
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-# Load the data
+# Loading the data
 data = pd.read_csv("C:/Users/HP/Desktop/yzodev/emotion/emotion-labels.csv")
 
 # Load stopwords and punctuation
 stopwords_set = set(stopwords.words("english"))
 punctuation_set = set(string.punctuation)
 
+#Tools for data processing
 lemmatizer = WordNetLemmatizer()
+analyzer = SentimentIntensityAnalyzer()
+
 # Preprocessing functions
 def clean_text(text):
   cleaned_text = ""
@@ -31,15 +34,13 @@ def clean_text(text):
       cleaned_text += word + " "
   return cleaned_text.strip()
 
-analyzer = SentimentIntensityAnalyzer()
-
 def calculate_sentiment(text):
   sentiment_scores = analyzer.polarity_scores(text)
   return sentiment_scores['compound'] # Return a single sentiment score
 
 def extract_features(text):
   text_length = len(text.split())
-  sentiment_score = calculate_sentiment(text) # Replace with your sentiment analysis function
+  sentiment_score = calculate_sentiment(text) # Replace with the sentiment analysis function
   return clean_text, text_length, sentiment_score
 
 # Clean the text data
