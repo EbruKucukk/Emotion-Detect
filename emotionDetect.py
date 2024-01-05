@@ -16,6 +16,10 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # Load the data
 data = pd.read_csv("C:/Users/HP/Desktop/yzodev/emotion/emotion-labels.csv")
 
+# Load stopwords and punctuation
+stopwords_set = set(stopwords.words("english"))
+punctuation_set = set(string.punctuation)
+
 lemmatizer = WordNetLemmatizer()
 # Preprocessing functions
 def clean_text(text):
@@ -37,10 +41,6 @@ def extract_features(text):
   text_length = len(text.split())
   sentiment_score = calculate_sentiment(text) # Replace with your sentiment analysis function
   return clean_text, text_length, sentiment_score
-
-# Load stopwords and punctuation
-stopwords_set = set(stopwords.words("english"))
-punctuation_set = set(string.punctuation)
 
 # Clean the text data
 data["Text"] = data["Text"].apply(clean_text)
