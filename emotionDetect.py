@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer, PorterStemmer
+from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 import string
 from sklearn.metrics import precision_recall_fscore_support
@@ -17,15 +17,12 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 data = pd.read_csv("C:/Users/HP/Desktop/yzodev/emotion/emotion-labels.csv")
 
 lemmatizer = WordNetLemmatizer()
-stemmer = PorterStemmer() 
 # Preprocessing functions
-
 def clean_text(text):
   cleaned_text = ""
   tokens = word_tokenize(text.lower()) # Tokenize and lowercase words
   for word in tokens:
-    word = lemmatizer.lemmatize(word)
-    stemmer.stem(word) # Lemmatize ve stemming
+    word = lemmatizer.lemmatize(word) # Lemmatize
     if word not in stopwords_set and word not in punctuation_set:
       cleaned_text += word + " "
   return cleaned_text.strip()
