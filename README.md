@@ -1,4 +1,4 @@
-<h3 align="center">Emotipn Detection Algorithm</h3>
+<h3 align="center">Emotion Detection Algorithm</h3>
 
 - 📝 An algorithm - The primary goal of this project is to understand and classify emotional content in textual data.
 
