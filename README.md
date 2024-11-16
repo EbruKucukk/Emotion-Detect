@@ -1,8 +1,8 @@
 <h3 align="center">Emotipn Detection Algorithm</h3>
 
-- 📝 An algorithm - [The primary goal of this project is to understand and classify emotional content in textual data.](The primary goal of this project is to understand and classify emotional content in textual data.)
+- 📝 An algorithm - The primary goal of this project is to understand and classify emotional content in textual data.
 
-- 〰️ The Dataset used consists of labeled text samples categorized according to emotions such as “joy”, “sadness”, “fear”, “anger”. [The aim is to develop an artificial intelligence model that can analyze this data and find the appropriate emotional classification.](The aim is to develop an artificial intelligence model that can analyze this data and find the appropriate emotional classification.)
+- 〰️ The Dataset used consists of labeled text samples categorized according to emotions such as “joy”, “sadness”, “fear”, “anger”. The aim is to develop an artificial intelligence model that can analyze this data and find the appropriate emotional classification.
 
 - 🔗You can access the Dataset from the link below. **https://www.kaggle.com/datasets/anjaneyatripathi/emotion-classification-nlp**
 
